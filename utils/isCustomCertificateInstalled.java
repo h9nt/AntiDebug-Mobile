@@ -1,6 +1,5 @@
 private boolean isCustomCertificateInstalled() {
     try {
-        // Access the trusted certificates on the device
         KeyStore keyStore = KeyStore.getInstance("AndroidCAStore");
         keyStore.load(null);
 
@@ -10,7 +9,7 @@ private boolean isCustomCertificateInstalled() {
             X509Certificate cert = (X509Certificate) keyStore.getCertificate(alias);
 
             if (cert.getIssuerDN().getName().contains("Burp") || cert.getIssuerDN().getName().contains("HTTP Toolkit")) {
-                return true; // Found a suspicious certificate
+                return true;
             }
         }
     } catch (Exception e) {
