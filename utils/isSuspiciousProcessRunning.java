@@ -5,7 +5,7 @@ private boolean isSuspiciousProcessRunning() {
         String line;
         while ((line = reader.readLine()) != null) {
             if (line.contains("frida") || line.contains("gadget")) {
-                return true; // Suspicious process detected
+                return true;
             }
         }
         reader.close();
