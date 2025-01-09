@@ -5,7 +5,7 @@ private boolean isSignatureValid(Context context) {
             PackageManager.GET_SIGNING_CERTIFICATES
         );
 
-        String expectedSignature = "YOUR_EXPECTED_SIGNATURE_HASH"; // SHA-256 hash of your APK's certificate
+        String expectedSignature = "YOUR_EXPECTED_SIGNATURE_HASH";
         String currentSignature = Base64.encodeToString(
             packageInfo.signingInfo.getApkContentsSigners()[0].toByteArray(),
             Base64.DEFAULT
